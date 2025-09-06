@@ -154,6 +154,8 @@ class DocumentController extends Controller
     // Créer un document
     public function apiStore(Request $request)
     {
+
+        // Validation des données à désactiver pour l’instant
         $request->validate([
             'titre' => 'required|string|max:255',
             'description' => 'required|string',
@@ -171,6 +173,8 @@ class DocumentController extends Controller
             'niveau_id' => $request->niveau_id,
             'parcours_id' => $request->parcours_id,
         ]);
+
+
 
         return response()->json([
             'message' => 'Document créé avec succès',
@@ -237,7 +241,7 @@ class DocumentController extends Controller
     }
 
     // Afficher le fichier dans le navigateur
-   public function apiView($id)
+    public function apiView($id)
 {
     $document = Document::find($id);
 

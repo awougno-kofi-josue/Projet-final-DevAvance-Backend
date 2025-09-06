@@ -44,10 +44,13 @@ Route::middleware([Cors::class])->group(function () {
 
     // --- Documents API --- //
     Route::get('/documents', [DocumentController::class, 'apiIndex']);
+    // Ajoute de nouveaux documents
     Route::post('/documents', [DocumentController::class, 'apiStore']);
-    Route::get('/documents/{id}', [DocumentController::class, 'apiShow']);
-    Route::put('/documents/{id}', [DocumentController::class, 'apiUpdate']);
-    Route::delete('/documents/{id}', [DocumentController::class, 'apiDestroy']);
+    // Fonctions désactivées pour l’instant
+
+    // Route::get('/documents/{id}', [DocumentController::class, 'apiShow']);
+    // Route::put('/documents/{id}', [DocumentController::class, 'apiUpdate']);
+    // Route::delete('/documents/{id}', [DocumentController::class, 'apiDestroy']);
 
     // --- Fichiers --- //
     Route::get('/documents/{id}/download', [DocumentController::class, 'apiDownload']);
