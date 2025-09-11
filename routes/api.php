@@ -44,7 +44,7 @@ Route::middleware([Cors::class])->group(function () {
 
     // --- Documents API --- //
     Route::get('/documents', [DocumentController::class, 'apiIndex']);
-    // Ajoute de nouveaux documents
+    // Ajoute de    
     Route::post('/documents', [DocumentController::class, 'apiStore']);
     // Fonctions désactivées pour l’instant
 
